@@ -86,8 +86,8 @@ class CardEditFragment : Fragment() {
         binding.acceptCard.setOnClickListener {
             /*executor.execute{
                 context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.updateCard(card) }
-            }
-            it.findNavController().navigate(CardEditFragmentDirections.actionCardEditFragmentToCardListFragment(card.deckId))*/
+            }*/
+            it.findNavController().navigate(CardEditFragmentDirections.actionCardEditFragmentToCardListFragment(card.deckId))
             reference.child(card.id).setValue(card)
         }
 

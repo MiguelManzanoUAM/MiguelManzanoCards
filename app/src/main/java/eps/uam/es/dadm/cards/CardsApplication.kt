@@ -50,13 +50,13 @@ class CardsApplication : Application(){
             cardDatabase.deckDao.deleteDecks()
 
             // Mazo Ingles
-            cardDatabase.deckDao.addDeck(Deck("Inglés", "Aprende algunos phrasal verbs con este mazo"))
+            cardDatabase.deckDao.addDeck(Deck("Inglés", "Aprende algunos phrasal verbs con este mazo", 1))
             cardDatabase.cardDao.addCard(Card("To wake up", "Despertarse", 1))
             cardDatabase.cardDao.addCard(Card("To rule out", "Descartar", 1))
             cardDatabase.cardDao.addCard(Card("To turn down", "Rechazar", 1))
 
             //Mazo Futbol
-            cardDatabase.deckDao.addDeck(Deck("Futbol", "Conoce algunos datos curiosos del fútbol"))
+            cardDatabase.deckDao.addDeck(Deck("Futbol", "Conoce algunos datos curiosos del fútbol", 2))
             cardDatabase.cardDao.addCard(Card("¿Qué jugador tiene más balones de oro?", "Lionel Messi", 2))
             cardDatabase.cardDao.addCard(Card("¿Qué jugador es el máximo goleador histórico?", "Cristiano Ronaldo",2))
 
@@ -67,7 +67,7 @@ class CardsApplication : Application(){
             cardDatabase.cardDao.addCard(choice1)
 
             //Mazo Deportes y Pasatiempos
-            cardDatabase.deckDao.addDeck(Deck("Deportes y pasatiempos", "Aprende algunos conceptos básicos de tus pasatiempos favoritos"))
+            cardDatabase.deckDao.addDeck(Deck("Deportes y pasatiempos", "Aprende algunos conceptos básicos de tus pasatiempos favoritos", 3))
 
             var choice2 = ChoiceCard("¿Cuánto dura un set en tenis de mesa?", "21 puntos", 3)
             choice2.optionA = "21 puntos"

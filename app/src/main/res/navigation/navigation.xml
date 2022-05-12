@@ -44,6 +44,9 @@
             app:destination="@id/studyFragment"
             app:popUpTo="@id/studyFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_titleFragment_to_emailPasswordActivity"
+            app:destination="@id/emailPasswordActivity" />
 
     </fragment>
 
@@ -181,5 +184,9 @@
             app:popUpTo="@id/cardListFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <activity
+        android:id="@+id/emailPasswordActivity"
+        android:name="eps.uam.es.dadm.cards.EmailPasswordActivity"
+        android:label="EmailPasswordActivity" />
 
 </navigation>

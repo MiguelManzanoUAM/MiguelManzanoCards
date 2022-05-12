@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cards">
         <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="true"
             android:label="@string/title_activity_settings" />
@@ -25,7 +28,7 @@
         </activity>
         <activity
             android:name=".StudyActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ThirdActivity"
             android:exported="true"

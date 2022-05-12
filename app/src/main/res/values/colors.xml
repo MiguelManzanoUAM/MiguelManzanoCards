@@ -12,4 +12,7 @@
     <color name="primary_app">#70E174</color>
     <color name="primary_title">#A5F4A7</color>
     <color name="primary_chart">#FFDCF4D5</color>
+    <color name="primary_teal">#FF03DAC5</color>
+    <color name="primary_teal2">#FF018786</color>
+
 </resources>

@@ -26,6 +26,9 @@ class TitleFragment: Fragment() {
                     Toast.LENGTH_LONG
                 ).show()
         }*/
+        binding.cardsTitleTextView.setOnClickListener{
+            view?.findNavController()?.navigate(R.id.action_titleFragment_to_emailPasswordActivity)
+        }
 
         return binding.root
 

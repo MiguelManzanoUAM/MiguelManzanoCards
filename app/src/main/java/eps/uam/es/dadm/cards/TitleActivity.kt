@@ -28,7 +28,7 @@ class TitleActivity : AppCompatActivity() {
         val reference = database.getReference("message")
         Timber.i("Referencia: ${reference.toString()}")
 
-        reference.setValue("Hello from Cards")
+        reference.setValue("Hello from Quiz Cards")
 
         reference.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

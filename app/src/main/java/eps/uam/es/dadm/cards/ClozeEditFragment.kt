@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.google.firebase.database.FirebaseDatabase
 import eps.uam.es.dadm.cards.database.CardDatabase
 import eps.uam.es.dadm.cards.databinding.FragmentClozeEditBinding
 import java.util.concurrent.Executors
@@ -26,6 +27,10 @@ class ClozeEditFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider(this).get(CardEditViewModel::class.java)
     }
+
+    private var reference = FirebaseDatabase
+        .getInstance()
+        .getReference("cards")
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cloze_edit, container, false)
@@ -78,11 +83,12 @@ class ClozeEditFragment : Fragment() {
         binding.answerEditText.addTextChangedListener(answerTextWatcher)
 
         binding.acceptCard.setOnClickListener {
-            executor.execute{
-                /*CardDatabase.getInstance(context).cardDao.update(card) */
+            /*executor.execute{
+
                 context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.updateCard(card) }
-            }
+            }*/
             it.findNavController().navigate(ClozeEditFragmentDirections.actionClozeEditFragmentToCardListFragment(card.deckId))
+            reference.child(card.id).setValue(card)
         }
 
         binding.cancelCard.setOnClickListener {

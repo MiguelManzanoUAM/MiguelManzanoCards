@@ -116,4 +116,10 @@
     <string name="board_title">Mostrar pizarra</string>
     <string name="board_summary_on">Pizarra disponible</string>
     <string name="board_summary_off">Pizarra no disponible</string>
+
+    <!--Firebase Authentication -->
+    <string name="password_hint">Contraseña</string>
+    <string name="sign_up_button">Registrarse</string>
+    <string name="log_in_button">Acceder</string>
+    <string name="log_out_button">Cerrar sesión</string>
 </resources>
