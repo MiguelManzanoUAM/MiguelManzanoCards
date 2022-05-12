@@ -1,0 +1,69 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/card_list_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </RelativeLayout>
+
+        <!--Añadir floating action dropdown menu -->
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/floatingActionMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20dp"
+            app:menu_colorNormal="@color/primary_app"
+            app:fab_colorPressed="@color/primary_title"
+            fab:menu_backgroundColor="@android:color/transparent"
+            app:menu_fab_label=""
+            app:menu_openDirection="up"
+            app:menu_showShadow="true">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/new_card_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/primary_app"
+                app:fab_colorPressed="@color/primary_title"
+                app:fab_label="@string/card_fab_menu"
+                app:fab_size="mini"
+                android:src="@drawable/ic_baseline_android_24"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/new_cloze_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_label="@string/cloze_fab_menu"
+                app:fab_colorNormal="@color/primary_app"
+                app:fab_colorPressed="@color/primary_title"
+                app:fab_size="mini"
+                android:src="@drawable/ic_baseline_android_24"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/new_choice_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_label="@string/choicecard_fab_menu"
+                app:fab_colorNormal="@color/primary_app"
+                app:fab_colorPressed="@color/primary_title"
+                app:fab_size="mini"
+                android:src="@drawable/ic_baseline_android_24"/>
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

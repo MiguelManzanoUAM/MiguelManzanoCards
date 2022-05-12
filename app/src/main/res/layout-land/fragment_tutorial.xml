@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tutorial_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:text="@string/tutorial_intro"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tutorial_question1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tutorial_intro"
+                android:layout_marginTop="40dp"
+                android:text="@string/tutorial_question1"
+                android:textColor="@color/primary_app"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tutorial_answer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tutorial_question1"
+                android:layout_marginTop="20dp"
+                android:text="@string/tutorial_answer1"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tutorial_question2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tutorial_answer1"
+                android:layout_marginTop="40dp"
+                android:text="@string/tutorial_question2"
+                android:textColor="@color/primary_app"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tutorial_answer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tutorial_question2"
+                android:layout_marginTop="20dp"
+                android:text="@string/tutorial_answer2"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tutorial_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tutorial_answer2"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/tutorial_footer"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
+
+
+
+

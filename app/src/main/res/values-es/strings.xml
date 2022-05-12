@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quiz Cards</string>
+    <string name="question_text">Tree</string>
+    <string name="answer_button_text">Ver respuesta</string>
+    <string name="help_button_text">Ayuda</string>
+    <string name="answer_text">Tree</string>
+
+    <string name="easy_button_title">Fácil</string>
+    <string name="doubt_button_title">Duda</string>
+    <string name="difficult_button_title">Difícil</string>
+
+    <string name="info_text_view_message">Número de tarjetas restantes</string>
+    <string name="due_cards_format">quedan %d tarjetas</string>
+
+    <string name="subtitle_text">Toca para estudiar</string>
+    <string name="no_more_cards_toast_message">No quedan tarjetas por estudiar</string>
+    <string name="review_cards_button_text">Repasar tarjetas</string>
+
+    <string name="question">Pregunta</string>
+    <string name="answer">Respuesta</string>
+    <string name="accept_card_edit_button_title">ACEPTAR</string>
+    <string name="cancel_card_edit_button_title">CANCELAR</string>
+
+    <string name="new_card_fab_description">Añadir tarjeta</string>
+    <string name="card_question_hint">Escribe la pregunta</string>
+    <string name="card_answer_hint">Escribe la respuesta</string>
+
+    <string name="decks_nav_menu_title">Mazos</string>
+    <string name="study_nav_menu_title">Repasar tarjetas</string>
+    <string name="statistics_nav_menu_title">Estadísticas</string>
+
+    <string name="about_nav_section">Acerca de</string>
+    <string name="about_explain">Aplicación para el aprendizaje acerca de diferentes temáticas
+        según distintos tipos de tarjetas siguiendo el algoritmo de ANKI y técnicas de
+        repeteción espaciada</string>
+    <string name="about_app">versión 1.0a1</string>
+
+    <string name="deck_name">Nombre del mazo</string>
+    <string name="deck_id">Identificador del mazo:    </string>
+    <string name="deck_description">Descripción del mazo</string>
+    <string name="deck_name_hint">Escribe un nuevo nombre</string>
+    <string name="deck_description_hint">Escribe una descripción para el mazo</string>
+    <string name="edit_deck"><u>Editar</u></string>
+
+    <string-array name="card_types">
+        <item>Card</item>
+        <item>Cloze</item>
+        <item>ChoiceCard</item>
+    </string-array>
+
+    <string name="delete_card"><u>Eliminar tarjeta</u></string>
+    <string name="delete_deck"><u>Eliminar mazo</u></string>
+    <string name="show_card"><u>mostrar información</u></string>
+    <string name="hide_card"><u>ocultar</u></string>
+
+    <string name="total_cards">Tarjetas totales: </string>
+    <string name="total_decks">Número de mazos: </string>
+    <string name="chart_card_decks">Numero de tarjetas por mazo</string>
+
+    <string name="tutorial_intro">QuizCards es una aplicación que te permite aprender y estudiar
+    acerca de distintas temáticas basándose en el algoritmo de aprendizaje de ANKI. Dentro
+    de la aplicación encontrarás distintos mazos que contendrán tarjetas con preguntas en
+    su interior para evaluar tu conocimiento.</string>
+
+    <string name="tutorial_question1">¿Cómo puedo añadir una nueva tarjeta a un mazo?</string>
+    <string name="tutorial_answer1">Dentro del mazo deseado encontrarás su correspondiente
+    lista de tarjetas, abajo de esta lista encontrarás una opción para añadir el tipo de
+    tarjeta que desees. Es muy similar a añadir un mazo en la aplicación</string>
+
+    <string name="tutorial_question2">¿Existe alguna ayuda de navegación?</string>
+    <string name="tutorial_answer2">El usuario dispondrá en todo momento de un menú que podrá
+    desplegar arrastrando el dedo por la pantalla de izquierda a derecha que le ofrecerá una
+    vista de las distintas secciones de la aplicación y podrá acceder a ellas a través de estos
+    atajos.</string>
+
+    <string name="tutorial_footer">Para cualquier nueva duda póngase en contacto con
+    el desarrollador de la aplicación</string>
+
+    <string name="card_fab_menu">Card</string>
+    <string name="cloze_fab_menu">Tarjeta Cloze</string>
+    <string name="choicecard_fab_menu">Tarjeta de elección</string>
+
+    <string name="options">Posibles respuestas</string>
+    <string name="card_option1_hint">Opción A</string>
+    <string name="card_option2_hint">Opción B</string>
+    <string name="card_option3_hint">Opción C</string>
+
+    <string name="settings_menu_title">Ajustes</string>
+    <string name="logout_menu_title">Cerrar sesión</string>
+
+    <string name="title_activity_settings">Ajustes</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- Preference Titles -->
+    <string name="decks_header">Mazos</string>
+
+    <!-- Maximum number of cards Preferences -->
+    <string name="max_number_cards">Número máximo de tarjetas</string>
+
+    <!-- Board Preferences -->
+    <string name="board_title">Mostrar pizarra</string>
+    <string name="board_summary_on">Pizarra disponible</string>
+    <string name="board_summary_off">Pizarra no disponible</string>
+</resources>

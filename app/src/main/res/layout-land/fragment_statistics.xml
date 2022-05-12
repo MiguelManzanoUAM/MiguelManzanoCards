@@ -1,0 +1,74 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20sp"
+            android:paddingRight="20sp"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"
+            tools:context=".StatisticsFragment">
+
+            <LinearLayout
+                android:id="@+id/base_statistics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/primary_title"
+                android:background="@drawable/customborder">
+
+                <TextView
+                    android:id="@+id/cards_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:text="@string/total_cards"/>
+
+                <TextView
+                    android:id="@+id/total_decks_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="30dp"
+                    android:layout_centerInParent="true"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/decks_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:text="@string/total_decks"/>
+
+                <TextView
+                    android:id="@+id/total_cards_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"/>
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chart"
+                android:layout_below="@id/base_statistics"
+                android:layout_marginTop="50dp"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

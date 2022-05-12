@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quiz Cards</string>
+    <string name="question_text">Tree</string>
+    <string name="answer_button_text">Check answer</string>
+    <string name="help_button_text">Help</string>
+    <string name="answer_text">Árbol</string>
+
+    <string name="easy_button_title">Easy</string>
+    <string name="doubt_button_title">Doubt</string>
+    <string name="difficult_button_title">Difficult</string>
+
+    <string name="info_text_view_message">Number of remaining cards</string>
+    <string name="due_cards_format">%d cards left</string>
+
+    <string name="subtitle_text">Tap to study</string>
+    <string name="no_more_cards_toast_message">No more cards left to study</string>
+    <string name="review_cards_button_text">Review cards</string>
+
+    <string name="question">Question</string>
+    <string name="answer">Answer</string>
+    <string name="accept_card_edit_button_title">ACCEPT</string>
+    <string name="cancel_card_edit_button_title">CANCEL</string>
+
+    <string name="new_card_fab_description">Add card</string>
+    <string name="card_question_hint">Write the question text</string>
+    <string name="card_answer_hint">Write the answer text</string>
+
+    <string name="decks_nav_menu_title">Decks</string>
+    <string name="study_nav_menu_title">Review cards</string>
+    <string name="statistics_nav_menu_title">Statistics</string>
+
+    <string name="about_nav_section">About</string>
+    <string name="about_explain">Application for learning about different topics
+        according to different types of cards following the ANKI algorithm and techniques of
+        spaced repetition</string>
+    <string name="about_app">version 1.0a1</string>
+
+    <string name="deck_name">Deck name</string>
+    <string name="deck_id">Deck Id:    </string>
+    <string name="deck_description">Deck description</string>
+    <string name="deck_name_hint">Write a new name</string>
+    <string name="deck_description_hint">Write a description for the deck</string>
+    <string name="edit_deck"><u>Edit</u></string>
+
+    <string-array name="card_types">
+        <item>Card</item>
+        <item>Cloze</item>
+        <item>ChoiceCard</item>
+    </string-array>
+
+    <string name="delete_card"><u>Delete this card</u></string>
+    <string name="delete_deck"><u>Delete this deck</u></string>
+    <string name="show_card"><u>show card</u></string>
+    <string name="hide_card"><u>hide card</u></string>
+
+    <string name="total_cards">Total cards: </string>
+    <string name="total_decks">Decks number: </string>
+    <string name="chart_card_decks">Number of cards per deck</string>
+
+    <string name="tutorial_intro">QuizCards is an application that allows you to learn and study
+        about different topics based on the ANKI learning algorithm. Inside of the application
+        you will find different decks that will contain cards with questions
+        inside to test your knowledge.</string>
+
+    <string name="tutorial_question1">How can I add a new card to a deck?</string>
+    <string name="tutorial_answer1">Within the desired deck you will find its corresponding
+    list of cards, below this list you will find an option to add the type of
+    card you want. It is very similar to adding a deck in the app</string>
+
+    <string name="tutorial_question2">Is there any navigation aid?</string>
+    <string name="tutorial_answer2">The user will have at all times a menu that can be
+    unfold by dragging your finger across the screen from left to right which will offer you a
+    view of the different sections of the application and you can access them through these
+    shortcuts.</string>
+
+    <string name="tutorial_footer">For any further questions, please contact
+    the app developer</string>
+
+    <string name="card_fab_menu">Card</string>
+    <string name="cloze_fab_menu">Cloze card</string>
+    <string name="choicecard_fab_menu">Choice card</string>
+
+    <string name="options">Available answers</string>
+    <string name="card_option1_hint">Option A</string>
+    <string name="card_option2_hint">Option B</string>
+    <string name="card_option3_hint">Option C</string>
+
+    <string name="settings_menu_title">Settings</string>
+    <string name="logout_menu_title">Log Out</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- Preference Titles -->
+    <string name="decks_header">Decks</string>
+
+    <!-- Maximum number of cards Preferences -->
+    <string name="max_number_cards">Maximum number of cards</string>
+
+    <!-- Board Preferences -->
+    <string name="board_title">Show board</string>
+    <string name="board_summary_on">Board available</string>
+    <string name="board_summary_off">Board unavailable</string>
+
+</resources>

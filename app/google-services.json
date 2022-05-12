@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "735471430948",
+    "firebase_url": "https://miguelmanzanocards-75226-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "miguelmanzanocards-75226",
+    "storage_bucket": "miguelmanzanocards-75226.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735471430948:android:19fec53326dc04a32257b1",
+        "android_client_info": {
+          "package_name": "eps.uam.es.dadm.cards"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735471430948-0pgr3rqaahq9vc8lgsfg1mto020vpq9r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eps.uam.es.dadm.cards",
+            "certificate_hash": "cf6b4ed4e3900a7e5ce76d82509d4389e45c8b7e"
+          }
+        },
+        {
+          "client_id": "735471430948-c0b014onacfh5dmvtggn1ej9eslam45r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmjniF4Lcs8CFZlsEAW7MiOp9ec4CzCS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735471430948-c0b014onacfh5dmvtggn1ej9eslam45r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
