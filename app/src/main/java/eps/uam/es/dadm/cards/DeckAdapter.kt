@@ -5,15 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import eps.uam.es.dadm.cards.database.CardDatabase
 import eps.uam.es.dadm.cards.databinding.ListItemDeckBinding
-import java.util.concurrent.Executors
 
 class DeckAdapter : RecyclerView.Adapter<DeckAdapter.DeckHolder>() {
 
     var data = listOf<Deck>()
     lateinit var binding: ListItemDeckBinding
-    private val executor = Executors.newSingleThreadExecutor()
 
     inner class DeckHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var local = binding
