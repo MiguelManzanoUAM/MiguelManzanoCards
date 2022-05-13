@@ -40,5 +40,8 @@ interface DeckDao {
 
     @Query("DELETE FROM decks_table")
     fun deleteDecks()
+    
+    @Delete
+    fun deleteDeck(deck: Deck)
 
 }

@@ -18,6 +18,9 @@
             android:exported="true"
             android:label="@string/title_activity_settings" />
         <activity
+            android:name=".EmailPasswordActivity"
+            android:exported="true"/>
+        <activity
             android:name=".TitleActivity"
             android:exported="true">
             <intent-filter>

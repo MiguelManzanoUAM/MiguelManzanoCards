@@ -41,12 +41,9 @@ class DeckListFragment: Fragment() {
         binding.newDeckFab.setOnClickListener {
             val deck = Deck("","")
 
-            /*executor.execute{
-                deck.id =
-                    context?.let { it1 -> CardDatabase.getInstance(it1).deckDao.getDecksSize().value.toString() }!!
-
+            executor.execute{
                 context?.let { it1 -> CardDatabase.getInstance(it1).deckDao.addDeck(deck) }
-            }*/
+            }
 
             it.findNavController().navigate(DeckListFragmentDirections.actionDeckListFragmentToDeckEditFragment(deck.id))
         }

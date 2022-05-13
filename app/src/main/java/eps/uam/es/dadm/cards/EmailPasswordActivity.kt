@@ -31,6 +31,8 @@ class EmailPasswordActivity : AppCompatActivity() {
         auth = Firebase.auth
         // [END initialize_auth]
 
+        setup()
+
     }
 
     // [START on_start_check_user]
@@ -113,40 +115,25 @@ class EmailPasswordActivity : AppCompatActivity() {
         //logica de registro
         binding.signUpButton.setOnClickListener{
             if(binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty()){
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.emailEditText.text.toString(),
-                    binding.passwordEditText.text.toString()).addOnCompleteListener{
-                        if(it.isSuccessful){
-                            it.result.user?.email?.let { it1 -> showHome(it1) }
-                        }else{
-                            showAlert()
-                        }
-                }
+                createAccount(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
+
             }
         }
 
         //logica de login
         binding.logInButton.setOnClickListener {
             if(binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty()){
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailEditText.text.toString(),
+                /*FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailEditText.text.toString(),
                     binding.passwordEditText.text.toString()).addOnCompleteListener{
                     if(it.isSuccessful){
                         it.result.user?.email?.let { it1 -> showHome(it1) }
                     }else{
                         showAlert()
                     }
-                }
+                }*/
+                signIn(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
             }
         }
-    }
-
-    private fun showAlert(){
-
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error autenticando al usuario")
-        builder.setPositiveButton("Aceptar", null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
     }
 
     private fun showHome(email: String){
