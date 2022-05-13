@@ -5,12 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import eps.uam.es.dadm.cards.database.CardDatabase
 import eps.uam.es.dadm.cards.databinding.ListItemCardBinding
+import java.util.concurrent.Executors
 
 class CardAdapter : RecyclerView.Adapter<CardAdapter.CardHolder>() {
 
     var data = listOf<Card>()
     lateinit var binding: ListItemCardBinding
+    private val executor = Executors.newSingleThreadExecutor()
 
     inner class CardHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var local = binding
@@ -30,6 +33,11 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.CardHolder>() {
 
             local.deleteCard?.setOnClickListener{
                 /*CardsApplication.removeCard(card.id)*/
+
+                executor.execute{
+                    it.context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.deleteCard(card) }
+                }
+
                 it.findNavController()
                     .navigate(CardListFragmentDirections.actionCardListFragmentSelf(card.deckId))
             }

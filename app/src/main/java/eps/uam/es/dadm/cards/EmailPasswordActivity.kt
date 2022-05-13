@@ -116,7 +116,7 @@ class EmailPasswordActivity : AppCompatActivity() {
         binding.signUpButton.setOnClickListener{
             if(binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty()){
                 createAccount(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
-
+                showHome(binding.emailEditText.text.toString())
             }
         }
 
@@ -132,6 +132,7 @@ class EmailPasswordActivity : AppCompatActivity() {
                     }
                 }*/
                 signIn(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
+                showHome(binding.emailEditText.text.toString())
             }
         }
     }
