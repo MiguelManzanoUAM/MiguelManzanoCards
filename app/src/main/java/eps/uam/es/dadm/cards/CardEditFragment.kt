@@ -26,7 +26,7 @@ class CardEditFragment : Fragment() {
     lateinit var answer: String
 
     private val viewModel by lazy {
-        ViewModelProvider(this).get(CardListFirebaseViewModel::class.java)
+        ViewModelProvider(this).get(CardListViewModel::class.java)
     }
 
     private var reference = FirebaseDatabase
@@ -84,11 +84,11 @@ class CardEditFragment : Fragment() {
         binding.answerEditText.addTextChangedListener(answerTextWatcher)
 
         binding.acceptCard.setOnClickListener {
-            /*executor.execute{
+            executor.execute{
                 context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.updateCard(card) }
-            }*/
+            }
             it.findNavController().navigate(CardEditFragmentDirections.actionCardEditFragmentToCardListFragment(card.deckId))
-            reference.child(card.id).setValue(card)
+            /*reference.child(card.id).setValue(card)*/
         }
 
         binding.cancelCard.setOnClickListener {

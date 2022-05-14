@@ -5,12 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import eps.uam.es.dadm.cards.database.CardDatabase
 import eps.uam.es.dadm.cards.databinding.ListItemDeckBinding
+import java.util.concurrent.Executors
 
 class DeckAdapter : RecyclerView.Adapter<DeckAdapter.DeckHolder>() {
 
     var data = listOf<Deck>()
     lateinit var binding: ListItemDeckBinding
+    private val executor = Executors.newSingleThreadExecutor()
 
     inner class DeckHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var local = binding
@@ -24,6 +27,16 @@ class DeckAdapter : RecyclerView.Adapter<DeckAdapter.DeckHolder>() {
             }
 
             local.deleteDeck?.setOnClickListener {
+
+                //borrar primero las cards de ese mazo
+                executor.execute{
+                    it.context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.deleteCardsOfDeck(deck.id) }
+                }
+
+                //borrar mazo
+                executor.execute{
+                    it.context?.let { it1 -> CardDatabase.getInstance(it1).deckDao.deleteDeck(deck) }
+                }
 
                 it.findNavController()
                     .navigate(DeckListFragmentDirections.actionDeckListFragmentSelf())

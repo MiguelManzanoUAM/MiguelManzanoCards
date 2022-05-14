@@ -19,7 +19,7 @@ class CardListFragment: Fragment() {
     private val executor = Executors.newSingleThreadExecutor()
 
     private val cardListViewModel by lazy {
-        ViewModelProvider(this).get(CardListFirebaseViewModel::class.java)
+        ViewModelProvider(this).get(CardListViewModel::class.java)
     }
 
     private var reference = FirebaseDatabase
@@ -56,29 +56,29 @@ class CardListFragment: Fragment() {
 
         binding.newCardFab.setOnClickListener {
             val card = Card("","", args.deckId)
-            /*executor.execute{
+            executor.execute{
                 context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.addCard(card) }
             }
-            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, local))*/
-            reference.child(card.id).setValue(card)
+            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, local))
+            /*reference.child(card.id).setValue(card)*/
         }
 
         binding.newClozeFab?.setOnClickListener {
             val cloze = Cloze("","", args.deckId)
-            /*executor.execute{
+            executor.execute{
                 context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.addCard(cloze) }
             }
-            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToClozeEditFragment(cloze.id, local))*/
-            reference.child(cloze.id).setValue(cloze)
+            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToClozeEditFragment(cloze.id, local))
+            /*reference.child(cloze.id).setValue(cloze)*/
         }
 
         binding.newChoiceFab?.setOnClickListener {
             val choice = ChoiceCard("","", args.deckId)
-            /*executor.execute{
+            executor.execute{
                 context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.addCard(choice) }
             }
-            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToChoiceCardEditFragment(choice.id, local))*/
-            reference.child(choice.id).setValue(choice)
+            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToChoiceCardEditFragment(choice.id, local))
+            /*reference.child(choice.id).setValue(choice)*/
         }
 
         cardListViewModel.cards.observe(viewLifecycleOwner) {

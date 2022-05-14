@@ -188,5 +188,16 @@
         android:id="@+id/emailPasswordActivity"
         android:name="eps.uam.es.dadm.cards.EmailPasswordActivity"
         android:label="EmailPasswordActivity" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="eps.uam.es.dadm.cards.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_deckListFragment"
+            app:destination="@id/deckListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 
 </navigation>

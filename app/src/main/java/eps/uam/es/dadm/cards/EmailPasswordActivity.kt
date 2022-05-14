@@ -123,14 +123,6 @@ class EmailPasswordActivity : AppCompatActivity() {
         //logica de login
         binding.logInButton.setOnClickListener {
             if(binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty()){
-                /*FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailEditText.text.toString(),
-                    binding.passwordEditText.text.toString()).addOnCompleteListener{
-                    if(it.isSuccessful){
-                        it.result.user?.email?.let { it1 -> showHome(it1) }
-                    }else{
-                        showAlert()
-                    }
-                }*/
                 signIn(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
                 showHome(binding.emailEditText.text.toString())
             }
