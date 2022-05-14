@@ -39,16 +39,24 @@ class DeckListFragment: Fragment() {
         binding.deckListRecyclerView.adapter = adapter
 
         binding.newDeckFab.setOnClickListener {
-            val deck = Deck("","")
+
+            val deck = (deckListViewModel.decks.value?.size?.plus(1))?.let { it1 -> Deck("","", it1.toLong()) }
 
             executor.execute{
-                context?.let { it1 -> CardDatabase.getInstance(it1).deckDao.addDeck(deck) }
+                context?.let { it1 ->
+                    if (deck != null) {
+                        CardDatabase.getInstance(it1).deckDao.addDeck(deck)
+                    }
+                }
             }
 
-            it.findNavController().navigate(DeckListFragmentDirections.actionDeckListFragmentToDeckEditFragment(deck.id))
+            if (deck != null) {
+                it.findNavController().navigate(DeckListFragmentDirections.actionDeckListFragmentToDeckEditFragment(deck.id))
+            }
         }
 
         deckListViewModel.decks.observe(viewLifecycleOwner) {
+
             adapter.data = it
             adapter.notifyDataSetChanged()
         }

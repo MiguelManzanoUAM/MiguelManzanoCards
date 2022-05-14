@@ -27,9 +27,9 @@ class HomeFragment : Fragment() {
         )
         binding.emailAuth.text = FirebaseAuth.getInstance().currentUser?.email.toString() ?: ""
 
-        binding.decksAuthButton.setOnClickListener {
+        /*binding.decksAuthButton.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_homeFragment_to_deckListFragment)
-        }
+        }*/
 
         binding.logOutButton.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
