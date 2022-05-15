@@ -27,10 +27,14 @@
             tools:text="@string/info_text_view_message" />
 
         <!-- añadir pizarra -->
-        <!--<eps.uam.es.dadm.cards.views.BoardView
-            android:layout_width=""
-            android:layout_height=""
-        > -->
+        <eps.uam.es.dadm.cards.views.BoardView
+            android:id="@+id/boardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/info_text_view"
+            android:backgroundTint="@color/primary_teal"
+            android:visibility="invisible"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

@@ -10,148 +10,153 @@
             type="eps.uam.es.dadm.cards.StudyViewModel" />
     </data>
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20sp"
+        android:visibility="@{viewModel.card == null ? View.INVISIBLE : View.VISIBLE}">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20sp"
-            android:visibility="@{viewModel.card == null ? View.INVISIBLE : View.VISIBLE}">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/info_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@{@string/due_cards_format(viewModel.nDueCards)}"
+            android:textSize="20sp"
+            tools:text="@string/info_text_view_message" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/info_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="@{@string/due_cards_format(viewModel.nDueCards)}"
-                android:textSize="20sp"
-                tools:text="@string/info_text_view_message" />
+        <!-- añadir pizarra -->
+        <eps.uam.es.dadm.cards.views.BoardView
+            android:id="@+id/boardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/info_text_view"
+            android:backgroundTint="@color/primary_teal"
+            android:visibility="invisible"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/question_options"
-                android:layout_centerInParent="true"
-                android:layout_below="@id/info_text_view"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/question_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:textSize="20dp"
-                    android:text="@{viewModel.card.question}"
-                    tools:text="Pregunta"/>
-
-                <!-- Opciones si es Choice Card -->
-                <TextView
-                    android:id="@+id/optionA_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_below="@id/question_text_view"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@{`a) ` + viewModel.card.optionA}"
-                    android:visibility="@{viewModel.card.isChoiceCard ? View.VISIBLE : View.INVISIBLE}"
-                    tools:text="Pregunta"/>
-
-                <TextView
-                    android:id="@+id/optionB_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_below="@id/optionA_text_view"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@{`b) ` + viewModel.card.optionB}"
-                    android:visibility="@{viewModel.card.isChoiceCard ? View.VISIBLE : View.INVISIBLE}"
-                    tools:text="Pregunta"/>
-
-                <TextView
-                    android:id="@+id/optionC_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_below="@id/optionB_text_view"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@{`c) ` + viewModel.card.optionC}"
-                    android:visibility="@{viewModel.card.isChoiceCard ? View.VISIBLE : View.INVISIBLE}"
-                    tools:text="Pregunta"/>
-
-            </LinearLayout>
-
-
-            <View
-                android:id="@+id/separator_view"
-                android:layout_below="@id/question_options"
-                android:layout_width="match_parent"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="30dp"
-                android:layout_height="1dp"
-                android:visibility="@{viewModel.card.answered ? View.VISIBLE : View.INVISIBLE}"
-                android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/question_options"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/answer_text_view"
-                android:layout_below="@id/separator_view"
+                android:id="@+id/question_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:visibility="@{viewModel.card.answered ? View.VISIBLE : View.INVISIBLE}"
                 android:textSize="20dp"
-                android:text="@{viewModel.card.answer}"
-                tools:text="Respuesta"/>
+                android:text="@{viewModel.card.question}"
+                tools:text="Pregunta"/>
+
+            <!-- Opciones si es Choice Card -->
+            <TextView
+                android:id="@+id/optionA_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/question_text_view"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="@{`a) ` + viewModel.card.optionA}"
+                android:visibility="@{viewModel.card.isChoiceCard ? View.VISIBLE : View.INVISIBLE}"
+                tools:text="Pregunta"/>
+
+            <TextView
+                android:id="@+id/optionB_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/optionA_text_view"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="@{`b) ` + viewModel.card.optionB}"
+                android:visibility="@{viewModel.card.isChoiceCard ? View.VISIBLE : View.INVISIBLE}"
+                tools:text="Pregunta"/>
+
+            <TextView
+                android:id="@+id/optionC_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/optionB_text_view"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="@{`c) ` + viewModel.card.optionC}"
+                android:visibility="@{viewModel.card.isChoiceCard ? View.VISIBLE : View.INVISIBLE}"
+                tools:text="Pregunta"/>
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/separator_view"
+            android:layout_below="@id/question_options"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="1dp"
+            android:visibility="@{viewModel.card.answered ? View.VISIBLE : View.INVISIBLE}"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/answer_text_view"
+            android:layout_below="@id/separator_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.card.answered ? View.VISIBLE : View.INVISIBLE}"
+            android:textSize="20dp"
+            android:text="@{viewModel.card.answer}"
+            tools:text="Respuesta"/>
+
+        <Button
+            android:id="@+id/answer_button_view"
+            android:layout_below="@id/answer_text_view"
+            android:layout_marginTop="50sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20sp"
+            android:visibility="@{viewModel.card.answered ? View.INVISIBLE : View.VISIBLE}"
+            android:text="@string/answer_button_text" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/difficulty_buttons_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="@{viewModel.card.answered ? View.VISIBLE : View.INVISIBLE}"
+            android:gravity="center">
 
             <Button
-                android:id="@+id/answer_button_view"
-                android:layout_below="@id/answer_text_view"
-                android:layout_marginTop="50sp"
-                android:layout_width="match_parent"
+                android:id="@+id/difficult_button_view"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="@{viewModel.card.answered ? View.INVISIBLE : View.VISIBLE}"
-                android:text="@string/answer_button_text" />
+                android:text="@string/difficult_button_title"
+                android:backgroundTint="@android:color/holo_red_light">
+            </Button>
 
-            <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/difficulty_buttons_view"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/doubt_button_view"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:visibility="@{viewModel.card.answered ? View.VISIBLE : View.INVISIBLE}"
-                android:gravity="center">
+                android:text="@string/doubt_button_title"
+                android:backgroundTint="@android:color/holo_blue_light">
+            </Button>
 
-                <Button
-                    android:id="@+id/difficult_button_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/difficult_button_title"
-                    android:backgroundTint="@android:color/holo_red_light">
-                </Button>
+            <Button
+                android:id="@+id/easy_button_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/easy_button_title"
+                android:backgroundTint="@android:color/holo_green_light">
+            </Button>
 
-                <Button
-                    android:id="@+id/doubt_button_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/doubt_button_title"
-                    android:backgroundTint="@android:color/holo_blue_light">
-                </Button>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
 
-                <Button
-                    android:id="@+id/easy_button_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/easy_button_title"
-                    android:backgroundTint="@android:color/holo_green_light">
-                </Button>
-
-            </com.google.android.material.button.MaterialButtonToggleGroup>
-
-        </RelativeLayout>
-    </ScrollView>
-
+    </RelativeLayout>
 </layout>

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.preference.PreferenceManager
 import eps.uam.es.dadm.cards.databinding.FragmentStudyBinding
 import timber.log.Timber
 
@@ -62,6 +63,11 @@ class StudyFragment: Fragment() {
             easyButtonView.setOnClickListener(listener)
             doubtButtonView.setOnClickListener(listener)
             difficultButtonView.setOnClickListener(listener)
+        }
+
+        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+        if(prefs.getBoolean("board", true)){
+            binding.boardView?.visibility = View.VISIBLE
         }
 
         return binding.root

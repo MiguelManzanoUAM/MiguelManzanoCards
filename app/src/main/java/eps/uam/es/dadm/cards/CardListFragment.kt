@@ -60,6 +60,7 @@ class CardListFragment: Fragment() {
                 context?.let { it1 -> CardDatabase.getInstance(it1).cardDao.addCard(card) }
             }
             it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, local))
+
             /*reference.child(card.id).setValue(card)*/
         }
 
